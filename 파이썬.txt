@@ -1,0 +1,18 @@
+파이썬 - 환경설정
+접근성이 좋다
+www.python.org
+- python 3(인터프리터, 라이브러리,툴(IDLE)
+
+seasons = ['spring','summer','autumn','winter']
+seasons = [0:2]
+>>>['spring','summer'] // 뒤에꺼 하나 뺀값 나옴 주의
+seasons = [:]
+>>> ['spring','summer','autumn','winter'] // 배열다튀어나옴
+
+주석 #
+
+변수 var 예약어,숫자가맨앞에못옴
+
+%appdata% 안에 local > Programs > Python > Python311 안에 있음 
+이안에서 모듈이랑 라이브러리 Doc문서 제어 가능
+C:\Users\Administrator\AppData\Local\Programs\Python\Python311
