@@ -20,5 +20,25 @@ for std in student:
     total = std['kor'] + std['eng'] + std['math']
     avg = total / len(student)
     print(f'{std["name"]} {total} {avg:.2f}')
-    print
 
+# 과목별 총점과 평균
+sum_subj = [0,0,0] # [국어총점, 영어총점, 수학총점]
+avg_subj = [0.0, 0.0, 0.0]
+for std in student:
+    sum_subj[0] += std['kor']
+    sum_subj[1] += std['eng']
+    sum_subj[2] += std['math']
+
+print("== 과목별 총점 ==")
+print(f"국어 총점 : {sum_subj[0]}")
+print(f"영어 총점 : {sum_subj[1]}")
+print(f"수학 총점 : {sum_subj[2]}")
+
+# 과목별 평균
+avg_subj[0] = sum_subj[0] / len(student)
+avg_subj[1] = sum_subj[1] / len(student)
+avg_subj[2] = sum_subj[2] / len(student)
+
+print("== 과목별 평균 ==")
+print( "국어   영어   수학")
+print(f'{avg_subj[0]} {avg_subj[1]} {avg_subj[2]}')
