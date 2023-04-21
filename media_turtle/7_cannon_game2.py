@@ -14,6 +14,12 @@ def turn_up():
 def turn_down():
     t.right(2)
 
+def turn_uup():
+    t.setheading(90)
+
+def turn_ddown():
+    t.setheading(270)
+
 def fire():
     ang = t.heading() # 거북이가 바라보는 각도
     while t.ycor() > 0: # y 좌표가 0보다 큰 경우 - 포탄위 땅 위에 있는 동안 반복
@@ -21,6 +27,7 @@ def fire():
         t.right(5)
 
     d = t.distance(target, 0)
+    t.write(d)
     t.sety(random.randint(10,100)) # 성공 또는 실패를 표시할 위치
     if d < 25: # 명중 - 목표지점에 닿음
         t.color('blue')
@@ -56,6 +63,8 @@ t.setheading(20)
 # 거북이 대포가 동작하는데 필요한 설정
 t.onkeypress(turn_up, "Up")
 t.onkeypress(turn_down,"Down")
+t.onkeypress(turn_uup,"Left")
+t.onkeypress(turn_ddown,"Right")
 t.onkeypress(fire, "space") # 스페이스 누르면 발사
 t.listen()
 
