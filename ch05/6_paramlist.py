@@ -21,7 +21,7 @@ def get_avg(a):
     return sum_v/len(a)
 def get_max(a):
     max_v = a[0]
-    for i in v:
+    for i in a:
         if max_v < i:
             max_v = i
     return max_v
@@ -38,10 +38,10 @@ min_v = 2 i=5,  2 > 5  False
           i=1,  2 > 1  True
 min_v = 1 i=4,  1 > 4  False
 """
-print("합계 :",get_sum(v))
-print("평균 :",get_avg(v))
-print("최댓값 :",get_max(v))
-print("최솟값 :",get_min(v))
+print("합계 :", get_sum(v))
+print("평균 :", get_avg(v))
+print("최댓값 :", get_max(v))
+print("최솟값 :", get_min(v))
 
 
 '''

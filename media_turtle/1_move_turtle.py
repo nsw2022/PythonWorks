@@ -12,14 +12,19 @@ d = 100  # 거리(크기)
 # 각도 = 360 / 변의 개수
 
 for i in range(4):
-    t.forward(d)
-    t.right(360/n)
+    t.forward(100)
+    t.right(90)
+
 t.color('blue')
-n = 3
 t.shapesize(2)
 for i in range(3):
-    t.forward(d)
-    t.right(360/n)
+    t.forward(100)
+    t.left(120)
+
+t.color('red')
+t.pensize(3)
+t.shapesize(3)
+t.circle(50)  # 반지름이 50px인 원
 
 
 
