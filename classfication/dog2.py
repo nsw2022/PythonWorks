@@ -3,7 +3,7 @@ class Dog:
     # tricks = [] # 클래스리스트
     def __init__(self, name):
         self.name = name
-        self.tricks = []
+        self.tricks = [] # 인스턴스 리스트
 
     def add_trick(self, trick):
         self.tricks.append(trick)
