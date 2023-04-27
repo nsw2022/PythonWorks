@@ -20,11 +20,11 @@ class Korea(Country):
     def show(self):
         print(
             """
-            
+            {}
             국가의 이름은 {} 입니다.
             국가의 인구는 {} 입니다.
             국가의 수도는 {} 입니다.
-            """.format(self.name, self.population, self.capital)
+            """.format(super().show(), self.name, self.population, self.capital)
         )
 
 t1 = Country()

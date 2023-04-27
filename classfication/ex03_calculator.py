@@ -14,11 +14,11 @@ class Calculator:
         self.x = self.x - y
         return self.x
 
+if __name__ == "__main__":
+    cal1 = Calculator()
+    print(cal1.add(10))  # 10
+    print(cal1.sub(4))  # 10-4=6
 
-cal1 = Calculator()
-print(cal1.add(10))  # 10
-print(cal1.sub(4))  # 10-4=6
-
-cal2 = Calculator()
-print(cal2.add(10.1))
-print(cal2.sub(2.5))
+    cal2 = Calculator()
+    print(cal2.add(10.1))
+    print(cal2.sub(2.5))
