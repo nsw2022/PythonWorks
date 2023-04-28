@@ -1,15 +1,44 @@
-from classfication.ex03_calculator import Calculator
+from classfication.ex10_calculator2 import Calculator
 
-class MoreClaculator(Calculator):
+
+class MoreCalculator(Calculator):
+    # 2x2x2x2
     def pow(self):
-        num=1
+        num = 1
         for i in range(0, self.y):
             num = num * self.x
         return num
 
-    def __init__(self,x,y):
-        self.x = x
-        self.y = y
+    """
+    def pow(self):
+        return self.x ** self.y
+    """
 
-t1 = MoreClaculator(2,4)
-print(t1.pow())
+    def div(self):
+        """
+        if self.y == 0:
+            return 0  #0으로 종료
+        else:
+            return self.x / self.y
+        """
+
+        try:
+            return self.x / self.y
+        except ZeroDivisionError as e:
+            # return "0으로 나눌 수 없습니다."
+            return e
+
+
+cal1 = MoreCalculator(2, 4)
+print(cal1.add())
+print(cal1.sub())
+print(cal1.mul())
+print(cal1.div())
+print(cal1.pow())
+
+cal2 = MoreCalculator(4, 0)
+print(cal1.add())
+print(cal1.sub())
+print(cal1.mul())
+print(cal2.div())  # 0
+print(cal2.pow())

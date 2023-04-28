@@ -1,21 +1,24 @@
-from classfication.ex03_calculator import Calculator
 
-class MoreClaculator:
-    def __init__(self, x):
+class Calculator:
+    def __init__(self, x, y):
         self.x = x
-    def cal(self,*x):
-        if x==0:
-            print("입력안함")
-        else:
-            self.x = self.x * self.x
-        return self.x
-    def pow(self,x,y):
-        if x==0 or y == 0:
-            print("0으로 나눌수 없습니다")
-        else:
-            a = x / y
-            return a
+        self.y = y
 
-t1 = MoreClaculator(3)
-print(t1.cal())
-print(t1.pow(4, 1))
+    def add(self):
+        return self.x + self.y
+
+    def sub(self):
+        return self.x - self.y
+
+    def mul(self):
+        return self.x * self.y
+
+    def div(self):
+        return self.x / self.y
+
+if __name__=="__main__":
+    cal = Calculator(5, 0)
+    print(cal.add())
+    print(cal.sub())
+    print(cal.mul())
+    print(cal.div())
