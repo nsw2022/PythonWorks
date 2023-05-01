@@ -283,8 +283,9 @@ else~
 ※ 에러 강제 발동은 따로 안다루심
 
 member - db 구축(SQLite3) <- flask를 이용한 소규모 프로젝트
-게시판
-ex_Orcal
+1. DB 연동
+2. 로그인 - 세션과 쿠키 - > 로그아웃
+3. 회원가입 유효성 검사
 
 -----------------------------------------
 djang 모듈 -> 프레임워크
@@ -301,6 +302,13 @@ pickle 모듈
 바이너리 파일 - 음성 파일 이미지 .bin
 .bin
 이미지 파일 읽고 쓰기 - 복사
+=============================
+         python-GUI
+Button(root)
+Label(root)
+Entery(root) - 입력상자, get()
+Text(root) - 출력상자, insert()
+
 =============================
 Web Server
 WAS - flask
