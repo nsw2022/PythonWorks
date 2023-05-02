@@ -15,6 +15,17 @@ def select():
         print(i)
     conn.close()
 
+def select_one():
+    conn = getconn()
+    cursor = conn.cursor()
+    sql = 'SELECT * FROM member' \
+          ' WHERE memberid = ? AND password = ?'
+    cursor.execute(sql,('cloul123','m123456#'))
+    rs = cursor.fetchone()
+    print(rs)
+    conn.close()
+
+
 def insert():
     conn = getconn()
     cursor = conn.cursor()
@@ -26,5 +37,6 @@ def insert():
     conn.close()
 
 
-insert()
-select()
+# insert()
+# select()
+select_one()

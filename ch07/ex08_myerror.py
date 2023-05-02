@@ -1,30 +1,17 @@
-# 예외 미루기
-# 사용하는 곳에서 발생 시킴
-class Animal:
-    def breathe(self):
-        print("숨을 쉰다")
+# 사용자 예외 만들기
+# Exception 클래스를 상속
+# raise -> 사용하는 쪽에서(try ~ except)
+class MyError(Exception):
+    def __str__(self):
+        return "허용되지 않는 별명입니다."
 
-    def cry(self):
-        raise NotImplementedError
+def say_nick(nick):
+    if nick == '바보':
+        raise MyError()
+    print(nick)
 
-class Dog(Animal):
-    def sleep(self):
-        print("강아지가 잠을 잔다")
-
-    def cry(self):
-        print("멍~ 멍~")
-
-class Cat(Animal):
-    def sleep(self):
-        print("고양이가 잠을 잔다")
-
-    # def cry(self):
-    #     print("야~옹 야~옹")
-
-dog = Dog()
-dog.breathe()
-dog.cry()
-
-cat = Cat()
-cat.breathe()
-cat.cry()
+try:
+    say_nick('영웅')
+    say_nick('바보')
+except MyError as e:
+    print(e)

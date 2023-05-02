@@ -54,15 +54,18 @@ footer{height: 80px; border-top: 2px solid #222;}
 #register form label{width: 120px; float:left; padding-left: 30px;}
 #register form input[type='text'],
         input[type='password']{width:200px; height:25px;}
-#register label.radio{width:40px; padding-left:0;}
+#register label.radio{width:40px; padding-left:0;margin-right:15px;}
 #register li.button{clear:both; padding-top:30px;margin-left:150px;}
 #register form input[type='submit'],
         input[type='reset']{width:80px; height:30px;}
 
-
-
-
-
-
-
-
+/* login 스타일 */
+#login{width:500px; margin: 40px auto;}
+#login form{margin:40px auto;}
+#login form ul li{margin:30px 70px;}
+#login form label{width:100px; float:left;}
+#login form input[type='text'], input[type='password']{width:200px; height: 30px;}
+#login form input[type='submit']{width: 100px; height:30px;
+            text-align:center;margin-left:100px;}
+#login form p.error{text-align: center; color: #f00;
+                font-weight: bold; padding-top: 10px}

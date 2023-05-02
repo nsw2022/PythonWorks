@@ -2,7 +2,7 @@ import oracledb
 
 def getconn():
     # dsn data source name 의 준말 ip:포트번호/오라클 버전
-    conn = oracledb.connect(user='c##mydb',password='mydb',
+    conn = oracledb.connect(user='c##mydb', password='mydb',
                             dsn='localhost:1521/xe')
     return conn
 

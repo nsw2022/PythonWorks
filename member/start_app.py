@@ -2,11 +2,14 @@
 # templates 폴더, static
 # 웹 서버 - flask
 
-from flask import Flask, render_template, request, redirect, url_for
+from flask import Flask, render_template, request, redirect,\
+    url_for, session
 import sqlite3
 
 
 app = Flask(__name__)
+
+app.secret_key = "qwerasdf1234!@#$"
 
 def getconn():
     conn = sqlite3.connect('E:/NSW/sqlworks/pydb/member.db')
@@ -49,8 +52,8 @@ def register():
         conn.commit()
         conn.close()
 
-        # 이방식은 안되려나? 나중에 테스트해보기 안되네
-        # sql = "INSERT INTO member(memberid, password, name, gender) " \
+        # 이방법도 가능
+        # sql = "INSERT INTO member(memberid, password, name, gender) " \ <- !!여기서 한칸띄우거나 VALUES에서 한칸 띄우는거 주의!!
         #       " VALUES(?,?,?,?)"
         # cursor.execute(sql, (id,pw,name,gender))
         # conn.commit()
@@ -60,6 +63,36 @@ def register():
         return redirect(url_for('memberlist'))
     else:
         return render_template('register.html')
+
+@app.route('/login',methods=['GET','POST'])
+def login():
+    if request.method == 'POST':
+        # 로그인 폼에 입력된 데이터를 넘겨 받기
+        id = request.form['memberid']
+        pw = request.form['passwd']
+
+        # database에 접속 - 로그인 체크
+        conn = getconn()
+        cursor = conn.cursor()
+        sql = f'SELECT * FROM member ' \
+              f' WHERE memberid = "{id}" AND password = "{pw}"'
+        cursor.execute(sql)
+        rs = cursor.fetchone()
+        conn.close()
+        if rs: # rs=True
+            session['userid'] = rs[0] # memberid를 세션에 저장(세션 발급)
+
+            return redirect(url_for('index'))
+        else:
+            error_msg = "아이디나 비밀번호를 확인해주세요."
+            return render_template('login.html',error_msg=error_msg)
+    else:
+        return render_template('login.html')
+
+@app.route('/logout')
+def logout():
+    session.clear() # 모든 세션 삭제
+    return redirect(url_for('index'))
 
 
 app.run()

@@ -300,6 +300,25 @@ DB - member table
 sqlite3 -> DBMS
 conn 객체 얻기
 
+!!!!!!!!!!쿠키와 세션!!!!!!!!!!!!!!!!
+
+클라이언트와 웹 서버 간의 상태를 지속적으로 유지하는 방법 2가지 방법론
+                    세션과 쿠키
+(html은 하나만 보여지기때문에 다른 html을 가도 접속 유지)
+
+쿠키는 내 컴퓨터로 다시옴
+세션은 서버에 남아있음
+
+1. 세션 사용
+세션(session) 발급
+{% if session %} - 로그인 된 상태
+{% if not session %} - 로그인 안된 상태
+alert("로그인해주세요")
+href = login.html
+
+
+
+
 -----------------------------------------
 djang 모듈 -> 프레임워크
 
@@ -321,6 +340,7 @@ Button(root)
 Label(root)
 Entery(root) - 입력상자, get()
 Text(root) - 출력상자, insert()
+Listbox - <textarea>
 
 =============================
 Web Server
