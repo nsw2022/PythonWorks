@@ -281,11 +281,24 @@ except~
 else~
 
 ※ 에러 강제 발동은 따로 안다루심
-
+-----------------------------------------
 member - db 구축(SQLite3) <- flask를 이용한 소규모 프로젝트
 1. DB 연동
 2. 로그인 - 세션과 쿠키 - > 로그아웃
 3. 회원가입 유효성 검사
+
+- header 반복 : header.html
+- footer 반복 : foot.html
+{% include 'header.html' %} 로 반복되는걸 (파이썬 기능)
+
+section 변경
+
+DB - member table
+회원 목록 - select()
+회원 가입
+
+sqlite3 -> DBMS
+conn 객체 얻기
 
 -----------------------------------------
 djang 모듈 -> 프레임워크
