@@ -38,5 +38,5 @@ def insert():
 
 
 # insert()
-# select()
-select_one()
+select()
+# select_one()
