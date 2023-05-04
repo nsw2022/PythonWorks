@@ -13,7 +13,7 @@ seasons = [:]
 
 %appdata% 안에 local > Programs > Python > Python311 안에 있음 
 이안에서 모듈이랑 라이브러리 Doc문서 제어 가능
-C:\Users\Administrator\AppData\Local\Programs\Python\Python311
+C:\Users\Administrator\AppData\Local\Programs\Python\Python311 <- 환경변수해둘것
 =========================================================
 1. 세미콜론(;) 사용하지않음
 2. 파이썬은 자료형 키워드가 없음
@@ -104,7 +104,7 @@ list - 중복 가능, 저장 순서 유지
 map - 키 벨류 값으로 존재, 키의 중복 불허, 값 중복 허용
 
 set -> 집합{}
-list -> []
+list -> ['a','b','c']
 map -> 딕셔너리['진' : 30]
 튜플(tuple) - 요소의 수정과 삭제 불가, 소괄호 사용
 
@@ -357,6 +357,11 @@ BeautifulSoup4
 네이버 - 증권 - 시장지표
 ex06_naver_exchange
 
+find('속성','속성값')
+findAll('속성') => 결과 리스트로 반환
+select_one(객체이름.태그)
+select
+ul = html.select_one('ul.data_lst')
 
 ================================
 robots.txt
@@ -381,5 +386,19 @@ regex
 데이터 분석 및 시각화
 자바스크립트 - 회원가입
 파이썬 - 문자열 검색
+=========05_04===================
+Pandas 모듈
+이차원 리스트(행, 열)
 
+데이터분석 시각화
 
+datafream1.ipynb
+ipynb i python noot book
+
+anaconda - 아나콘다
+jupyter notebook
+
+all(x) - x가 모두 참이여야함
+any(x) - x가 하나라도 참이 있으면 True
+
+칼럼명 변경
