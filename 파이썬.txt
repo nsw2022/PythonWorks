@@ -402,3 +402,23 @@ all(x) - x가 모두 참이여야함
 any(x) - x가 하나라도 참이 있으면 True
 
 칼럼명 변경
+=========이미지 넣기05_08===================
+
+pyui/ex08_lunch_coupon
+Lable에 이미지 넣기
+PhotoImage(file='coupon.png')
+
+ex09
+1. 파일 단독인경우 - calculator.py
+puinstaller --noconfirm --onfile --windowed --add-data "파일경로"
+
+2. 외부파일이 있는 경우(이미지 첨가된거) - (총 두번실행) 코드 설명순으로 나열
+pyinstaller --noconfirm --onefile --windowed --add-data "이미지경로;." "파일경로" # ※이미지 경로;.※ <- 끝에 ;. 꼭붙혀야해요!!
+pyinstaller --noconfirm --onefile --windowed --add-data "E:\NSW\PythonWorks\execonpon\bronx.png;." "E:\NSW\PythonWorks\execonpon\coupon.py"
+1. 처음에 실행시키고 이미지 dist안으로 넣어줘야함!(여기오류나는거맞음)
+2. 파일생겼다면 dist안에 이미지 변경
+파일변경했다면 변경한곳에서 파일안에서 이미지경로 수정해줘야해요 안하면 오류남!
+
+외부 라이브러리 exe로 만들어주는 pyinstaller
+.exe
+실행파일
