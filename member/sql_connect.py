@@ -20,7 +20,7 @@ def select_one():
     cursor = conn.cursor()
     sql = 'SELECT * FROM member' \
           ' WHERE memberid = ? AND password = ?'
-    cursor.execute(sql,('cloul123','m123456#'))
+    cursor.execute(sql,('test1234','!a12345678'))
     rs = cursor.fetchone()
     print(rs)
     conn.close()
@@ -38,5 +38,5 @@ def insert():
 
 
 # insert()
-select()
-# select_one()
+# select()
+select_one()

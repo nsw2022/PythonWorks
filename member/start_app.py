@@ -78,7 +78,7 @@ def login():
         cursor = conn.cursor()
         # 동적 바인딩
         sql = f"SELECT * FROM member " \
-              f"WHERE memberid = '{id}' AND passwd = '{pw}'"
+              f" WHERE memberid = '{id}' AND password = '{pw}'"
         cursor.execute(sql)
         rs = cursor.fetchone()
         print(rs)

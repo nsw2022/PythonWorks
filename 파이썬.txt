@@ -410,7 +410,9 @@ PhotoImage(file='coupon.png')
 
 ex09
 1. 파일 단독인경우 - calculator.py
-puinstaller --noconfirm --onfile --windowed --add-data "파일경로"
+pyinstaller --onefile --noconsole lotto.py
+이거하기전 cmd를 파일 있는곳으로 가야함
+pyinstaller --onefile --noconsole (해당경로안에있는 파이썬파일)
 
 2. 외부파일이 있는 경우(이미지 첨가된거) - (총 두번실행) 코드 설명순으로 나열
 pyinstaller --noconfirm --onefile --windowed --add-data "이미지경로;." "파일경로" # ※이미지 경로;.※ <- 끝에 ;. 꼭붙혀야해요!!
@@ -422,3 +424,24 @@ pyinstaller --noconfirm --onefile --windowed --add-data "E:\NSW\PythonWorks\exec
 외부 라이브러리 exe로 만들어주는 pyinstaller
 .exe
 실행파일
+=================파이썬 책 05_09=================================
+입력
+1.콘솔 - 명령행(테스트 주도)
+2.함수
+3.gui
+
+깃허브 https://github.com/kyclark/tiny_python_projects.git
+언어공부사이트 https://replit.com/ (리플릿이라읽음)
+# 조건분기
+article = '' # 'a', 'an'
+if word[0].lower() in 'aeiou':
+    article = 'an'
+else:
+    article = 'a'
+print(article)
+
+# 조건분기를 한문장으로
+char = 'o'
+article = 'an' if char in 'aeiou' else 'a'
+변수1 = 참값 if 변수2 in 조건 else 거짓값
+print(article)

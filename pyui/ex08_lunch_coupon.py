@@ -35,6 +35,7 @@ def click():
     for i in win_list:
         output.insert(END, namelist[i] + ' ')
 
+
 window = Tk()
 window.title("쿠폰 추첨기")
 window.option_add('*font', '맑은고딕 14')
