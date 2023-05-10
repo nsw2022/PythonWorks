@@ -185,6 +185,7 @@ print(함수이름(매개변수1,매개변수2,매개변수3)
 ※ 가변매개변수 : 인자를 여러개 입력하는 경우를 말함
 
             @@ 키워드 인자 @@
+            test폴더 및 ch09 > ex01_kwargs
 def saveDic(**kargs):
     print(kargs)
 
@@ -316,8 +317,28 @@ conn 객체 얻기
 alert("로그인해주세요")
 href = login.html
 
+회원가입,로그인 -> 세션발급
+로그아웃 -> 세션 초기화(로그아웃은 세션있을때만 가능하게 조건문을 걸음)
 
+2. 게시판 목록만들기
+1. url('/boardlist')설정
+2. 제어함수
+3. boardlist.html
+게시판테이블
+DBMS-SQLITE3
 
+로그인해야 글 쓸수있음(회원가입이 되어있어야함)
+관계 - 회원(기본키-memberid) 게시판(외래키)
+칼럼명             자료형
+bno         글번호 INTEGER(숫자),
+title       글제목 TEXT,
+content     글내용 TEXT,
+createdate  작성일 date
+hit         조회수 INTEGER(숫자)
+memberid          TEXT(외래키)
+외래키제약조건
+외래키는(사용할 컬럼명) REFERENCES 테이블(테이블의 컬럼명) 레코드 삭제시 같이 삭제
+FOREIGN KEY(memberid) REFERENCES member(memberid) ON DELETE CASCADE
 
 -----------------------------------------
 djang 모듈 -> 프레임워크
@@ -373,8 +394,8 @@ regex
 \d - [0-9] 숫자만됨
 \w - [a-zA-Z0-9] 다된다보면됨
 \s - 공백문자space
-\+ 앞문자 한번이상
-\* 앞문자 없어도 가능
+\+ 1개이상
+\* 0개이상
 (.) 임의의 문자
 
 
@@ -445,3 +466,8 @@ char = 'o'
 article = 'an' if char in 'aeiou' else 'a'
 변수1 = 참값 if 변수2 in 조건 else 거짓값
 print(article)
+
+명령행으로 인수 전달
+1개 You are bringing aslad.
+2개 You are bringing aslad and egg.
+3개 You are bringing aslad, egg and gimbob
