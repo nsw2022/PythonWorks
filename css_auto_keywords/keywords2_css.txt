@@ -64,6 +64,7 @@ center
 clear
 clip
 color
+collapse
 column-count
 column-fill
 column-gap

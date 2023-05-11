@@ -311,7 +311,7 @@ conn 객체 얻기
 세션은 서버에 남아있음
 
 1. 세션 사용
-세션(session) 발급
+세션(session) 발급 -> 회원가입, 로그인
 {% if session %} - 로그인 된 상태
 {% if not session %} - 로그인 안된 상태
 alert("로그인해주세요")
@@ -339,6 +339,26 @@ memberid          TEXT(외래키)
 외래키제약조건
 외래키는(사용할 컬럼명) REFERENCES 테이블(테이블의 컬럼명) 레코드 삭제시 같이 삭제
 FOREIGN KEY(memberid) REFERENCES member(memberid) ON DELETE CASCADE
+
+글목록-글제목클릭-글상세보기
+detail.html
+
+url - /detail/bno
+def detail
+detail.html
+
+글 삭제
+url - /delete/bno
+def delete():
+페이지 필요없음(삭제됐다는거만알려주기) -> redirect("boardlist")
+세션 적용
+자신의 글만 삭제해야함
+삭제 버튼이 다른사람은 보이면 안됨
+confirm(진짜삭제할건지물어보기) alert같은창인데 확인취소창
+
+
+                    세션관련 정리
+회원가입, 로그인 발급 -> 멤버리스트에서 사용
 
 -----------------------------------------
 djang 모듈 -> 프레임워크
