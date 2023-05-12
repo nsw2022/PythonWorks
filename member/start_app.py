@@ -121,15 +121,15 @@ def boardlist():
 def writing():
     if request.method == 'POST':
         # 입력된 글을 가져와서 DB에 저장
-        title = request.form['title']
-        content = request.form['content']
+        title = request.form['title'].replace("'", "''")
+        content = request.form['content'].replace("'", "''")
         # userid : session 이름을 가져옴
         memberid = session.get('userid')
 
         conn = getconn()
         cursor = conn.cursor()
-        sql = f'INSERT INTO board(title, content, memberid) ' \
-              f'VALUES("{title}", "{content}", "{memberid}")'
+        sql = f"INSERT INTO board(title, content, memberid) " \
+              f"VALUES('{title}', '{content}', '{memberid}')"
         cursor.execute(sql)
         conn.commit()
         conn.close()
@@ -147,6 +147,15 @@ def detail(bno):
     sql = f"SELECT * FROM board WHERE bno = {bno} "
     cursor.execute(sql)
     board = cursor.fetchone()
+
+
+    #조회수 증가
+    hit = board[4]
+    sql = f"UPDATE board SET hit = {hit + 1} WHERE bno = {bno}"
+    cursor.execute(sql)
+    conn.commit()
+
+
     conn.close()
 
     return render_template('detail.html', board=board)
@@ -162,5 +171,32 @@ def delete(bno):
     conn.commit()
     conn.close()
     return redirect(url_for("boardlist"))
+
+# 게시글 수정
+@app.route('/update/<int:bno>',methods=['GET','POST'])
+def update(bno):
+    if request.method == "POST":
+        title = request.form['title'].replace("'", "''")
+        content = request.form['content'].replace("'", "''")
+
+        # DB에 저장
+        conn = getconn()
+        cursor = conn.cursor()
+        sql = f"UPDATE board SET title = '{title}', content = '{content}' " \
+              f" WHERE bno = {bno}"
+        cursor.execute(sql)
+        conn.commit()
+        conn.close()
+        return redirect(url_for('detail', bno=bno))
+    else:
+        # 수정할 글(board)을 db에 가져오기
+        conn = getconn()
+        cursor = conn.cursor()
+        sql = f"SELECT * FROM board WHERE bno = {bno} "
+        cursor.execute(sql)
+        board = cursor.fetchone()
+        conn.close()
+
+        return render_template('update.html',board=board)
 
 app.run()
