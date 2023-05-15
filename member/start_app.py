@@ -194,7 +194,7 @@ def update(bno):
         cursor = conn.cursor()
         sql = f"SELECT * FROM board WHERE bno = {bno} "
         cursor.execute(sql)
-        board = cursor.fetchone()
+        board = cursor.fetchone() # 게시글 한개 받아옴
         conn.close()
 
         return render_template('update.html',board=board)
