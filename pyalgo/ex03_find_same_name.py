@@ -3,6 +3,7 @@
 def find_swame_name(a):
     same_name = set()#중복값 기억할 빈집합
     n = len(a)
+    # same_name = []
     for i in range(0, n-1):
         # print(f'나는 i{i}')
         for j in range(i+1, n):

@@ -29,7 +29,7 @@ while True:
         count += 1
     elif (you == '가위' and win_list == '보') or (you == '바위' and win_list == '가위') or (you == '보' and win_list == '바위'):
         print("결과: 승리")
-        print(f'{count}만에 승리하셨습니다!!')
+        print(f'{count}번만에 승리하셨습니다!!')
         break
     else:
         print("결과: 패")
