@@ -15,9 +15,20 @@ def search_list2(a, x):
     for i in range(0, n):
         if a[i] == x:
             same_value.append(i)
-    if len(same_value) == 0:
+    if x not in a:
         return -1
     return same_value
+
+
+# def search_list2(a, x):
+#     n = len(a)
+#     same_value = []
+#     for i in range(0, n):
+#         if a[i] == x:
+#             same_value.append(i)
+#     if len(same_value) == 0:
+#         return -1
+#     return same_value
 
 
 
