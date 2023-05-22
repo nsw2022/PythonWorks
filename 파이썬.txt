@@ -494,3 +494,22 @@ print(article)
 1개 You are bringing aslad.
 2개 You are bringing aslad and egg.
 3개 You are bringing aslad, egg and gimbob
+
+===============!!!!!!!OCR 광학문자인식!!!!!!!=================================
+
+OCR-광학문자인식
+이미지 텍스트 추출
+모듈 - 테세렉트 (Tesseract)
+광학문자 인식 엔진
+무료소프트웨어이며 아파치에서 만듬
+
+https://github.com/tesseract-ocr/tesseract
+
+깃헙으로 가서 Installing Tesseract 설명안의 intall 링크클릭(https://tesseract-ocr.github.io/tessdoc/Installation.html)
+컨트롤 f검색으로 window찾아서 Tesseract at UB Mannheim. 링크클릭(https://github.com/UB-Mannheim/tesseract/wiki)안의
+tesseract-ocr-w64-setup-5.3.1.20230401.exe (64 bit) <- 다운받기
+
+이미지 처리
+pip install Pillow
+pip install pytesseract
+
