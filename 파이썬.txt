@@ -513,3 +513,8 @@ tesseract-ocr-w64-setup-5.3.1.20230401.exe (64 bit) <- 다운받기
 pip install Pillow
 pip install pytesseract
 
+머신러닝 기능 향상
+https://github.com/tesseract-ocr/tessdata <- 안의 kor.traineddata 와kor_vert.traineddata 을 덮어씌워 기능향상
+
+
+
